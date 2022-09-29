@@ -1,8 +1,12 @@
 import { NavMenu } from "./styles";
 
-export const Menu = () => {
+type MenuProps = {
+  showMenu: boolean;
+}
+
+export const Menu = ({ showMenu }: MenuProps) => {
   return (
-    <NavMenu>
+    <NavMenu showMenu={showMenu}>
       <ul>
         <li>Playstation</li>
         <li>Xbox</li>
