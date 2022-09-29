@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
-export const NavMenu = styled.nav`
-  background-color: #000;
+type NavMenu = {
+  showMenu: boolean;
+};
+
+export const NavMenu = styled.nav<NavMenu>`
+  background-color: rgba(0,0,0, 0.5);
   width: 100%;
   height: 100%;
-  max-width: 380px;
+  max-width: 280px;
   position: absolute;
   padding-top: 60px;
   top: 0;
   left: 0;
   z-index: 1;
-  transform: translate(-100%, 0%);
+  transition: all .7s ease-in-out;
+  transform: ${({ showMenu }) =>
+    showMenu ? "translate(0%, 0%)" : "translate(-100%, 0%)"};
 
   ul {
     list-style: none;
@@ -23,7 +29,7 @@ export const NavMenu = styled.nav`
       padding: 10px 25px;
       cursor: pointer;
       margin: 5px 0;
-      transition: all .30s ease-in-out;
+      transition: all 0.3s ease-in-out;
       border-right: 2px solid black;
 
       &:hover {
