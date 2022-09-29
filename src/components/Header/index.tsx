@@ -4,12 +4,16 @@ import { MenuButton } from "../MenuButton";
 
 import { GlobalStyles } from "../../globalStyles";
 
-export const Header = () => {
+type HeaderProps = {
+  handleToogleMenu: () => void;
+};
+
+export const Header = ({ handleToogleMenu }: HeaderProps) => {
   return (
     <Container>
       <div className="wrapper">
         <strong>Play the game</strong>
-        <MenuButton />
+        <MenuButton handleToogleMenu={handleToogleMenu} />
       </div>
 
       <GlobalStyles />
