@@ -4,6 +4,7 @@ export const Container = styled.header`
   background-color: white;
   position: relative;
   box-shadow: 0 0 12px 0 #7a7a7a;
+  z-index: 2;
   
   .wrapper {
     max-width: 1280px;
