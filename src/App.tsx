@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 import { Header } from "./components/Header";
 import { Menu } from "./components/Menu";
 
+type MainContextProps = {
+  showMenu: boolean;
+  handleToogleMenu: () => void;
+}
+
+export const MainContext = createContext({} as MainContextProps);
+
 function App() {
+
   const [showMenu, setShowMenu] = useState(false);
 
   const handleToogleMenu = () => {
@@ -11,10 +19,13 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header handleToogleMenu={handleToogleMenu} />
-      <Menu showMenu={showMenu} />
-    </div>
+    <MainContext.Provider value={{
+      showMenu,
+      handleToogleMenu,
+    }}>
+      <Header />
+      <Menu  />
+    </MainContext.Provider>
   );
 }
 

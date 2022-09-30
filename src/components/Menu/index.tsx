@@ -1,18 +1,20 @@
 import { NavMenu } from "./styles";
 
-type MenuProps = {
-  showMenu: boolean;
-}
+import { MainContext } from "../../App";
 
-export const Menu = ({ showMenu }: MenuProps) => {
+export const Menu = () => {
   return (
-    <NavMenu showMenu={showMenu}>
-      <ul>
-        <li>Playstation</li>
-        <li>Xbox</li>
-        <li>Nitendo</li>
-        <li>Sega</li>
-      </ul>
-    </NavMenu>
+    <MainContext.Consumer>
+      {({ showMenu }) => (
+        <NavMenu showMenu={showMenu}>
+          <ul>
+            <li>Playstation</li>
+            <li>Xbox</li>
+            <li>Nitendo</li>
+            <li>Sega</li>
+          </ul>
+        </NavMenu>
+      )}
+    </MainContext.Consumer>
   );
 };

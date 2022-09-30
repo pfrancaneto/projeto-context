@@ -2,14 +2,16 @@ import { FaGamepad } from "react-icons/fa";
 
 import { Button } from "./styles";
 
-type MenuButtonProps = {
-  handleToogleMenu: () => void;
-};
+import { MainContext } from "../../App";
 
-export const MenuButton = ({ handleToogleMenu }: MenuButtonProps) => {
+export const MenuButton = () => {
   return (
-    <Button onClick={handleToogleMenu}>
-      <FaGamepad size={32} color="tomato" />
-    </Button>
+    <MainContext.Consumer>
+      {({ handleToogleMenu }) => (
+        <Button onClick={handleToogleMenu}>
+          <FaGamepad size={32} color="tomato" />
+        </Button>
+      )}
+    </MainContext.Consumer>
   );
 };
