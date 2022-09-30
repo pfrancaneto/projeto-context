@@ -6,7 +6,7 @@ type MainContextProviderProps = {
 
 type MainContextProps = {
   showMenu: boolean;
-  handleToogleMenu: () => void;
+  handleToggleMenu: () => void;
 };
 
 export const MainContext = createContext({} as MainContextProps);
@@ -14,7 +14,7 @@ export const MainContext = createContext({} as MainContextProps);
 export const MainContextProvider = ({ children }: MainContextProviderProps) => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const handleToogleMenu = () => {
+  const handleToggleMenu = () => {
     setShowMenu(!showMenu);
   };
   
@@ -22,7 +22,7 @@ export const MainContextProvider = ({ children }: MainContextProviderProps) => {
     <MainContext.Provider
       value={{
         showMenu,
-        handleToogleMenu,
+        handleToggleMenu,
       }}
     >
       {children}
