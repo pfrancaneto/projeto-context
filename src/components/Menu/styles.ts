@@ -5,16 +5,16 @@ type NavMenu = {
 };
 
 export const NavMenu = styled.nav<NavMenu>`
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 100%;
+  height: calc(100% - 50px);
   max-width: 280px;
   position: absolute;
-  padding-top: 60px;
+  margin-top: 50px; 
   top: 0;
   left: 0;
   z-index: 1;
-  transition: all .7s ease-in-out;
+  transition: all 0.7s ease-in-out;
   transform: ${({ showMenu }) =>
     showMenu ? "translate(0%, 0%)" : "translate(-100%, 0%)"};
 
@@ -34,7 +34,8 @@ export const NavMenu = styled.nav<NavMenu>`
 
       &:hover {
         border-right: 5px solid tomato;
-        background-color: #171717;
+        background-color: #f1f1f1f1;
+        color: #069;
       }
     }
   }

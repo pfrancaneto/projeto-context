@@ -4,7 +4,6 @@ import { MenuButton } from "../MenuButton";
 
 import { GlobalStyles } from "../../globalStyles";
 
-
 export const Header = () => {
   return (
     <Container>
